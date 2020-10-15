@@ -1,0 +1,311 @@
+\documentclass[twoside,twocolumn]{article}
+\usepackage[latin1]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{blindtext} % Package to generate dummy text throughout this template 
+
+
+\usepackage[hmarginratio=1:1,top=32mm,columnsep=20pt]{geometry} % Document margins
+\usepackage[hang, small,labelfont=bf,up,textfont=it,up]{caption} % Custom captions under/above floats in tables or figures
+\usepackage{booktabs} % Horizontal rules in tables
+\usepackage{lettrine} % The lettrine is the first enlarged letter at the beginning of the text
+
+\usepackage{enumitem} % Customized lists
+\setlist[itemize]{noitemsep} % Make itemize lists more compact
+
+\usepackage{abstract} % Allows abstract customization
+\renewcommand{\abstractnamefont}{\normalfont\bfseries} % Set the "Abstract" text to bold
+\renewcommand{\abstracttextfont}{\normalfont\small\itshape} % Set the abstract itself to small italic text
+
+\usepackage{titlesec} % Allows customization of titles
+\renewcommand\thesection{\Roman{section}} % Roman numerals for the sections
+\renewcommand\thesubsection{\roman{subsection}} % roman numerals for subsections
+\titleformat{\section}[block]{\large\scshape\centering}{\thesection.}{1em}{} % Change the look of the section titles
+\titleformat{\subsection}[block]{\large}{\thesubsection.}{1em}{} % Change the look of the section titles
+
+\usepackage{fancyhdr} % Headers and footers
+\pagestyle{fancy} % All pages have headers and footers
+\fancyhead{} % Blank out the default header
+\fancyfoot{} % Blank out the default footer
+\fancyhead[C]{Estructura de Datos y Base de Datos Relacionales $\bullet$ Octubre 2020 $\bullet$ } % Custom header text
+\fancyfoot[RO,LE]{\thepage} % Custom footer text
+
+\usepackage{titling} % Customizing the title section
+
+\usepackage{hyperref} % For hyperlinks in the PDF
+
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION
+%----------------------------------------------------------------------------------------
+
+\setlength{\droptitle}{-4\baselineskip} % Move the title up
+
+\pretitle{\begin{center}\Huge\bfseries} % Article title formatting
+\posttitle{\end{center}} % Article title closing formatting
+\title{Estructura de Datos y Base de Datos Relacionales} % Article title
+\author{Balcon Edwart, Cardenas Silva, Espeche Exequiel, Tycona Alex, Velasquez Bryam}
+\date{\today} % Leave empty to omit a date
+
+\renewcommand{\maketitlehookd}
+{%
+\begin{abstract}
+\noindent Este articulo pretende dar a conocer un panorama general de la importancia de la aplicación de estructura de datos buscando detallar de manera comprensiva, ademas la utilización de forma correcta de las base de datos relacionales aplicando en estas ultimas las muchas variedad de operaciones que se definirán en el articulo.
+
+\end{abstract}
+}
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+% Print the title
+\maketitle
+
+%----------------------------------------------------------------------------------------
+%	ARTICLE CONTENTS
+%----------------------------------------------------------------------------------------
+
+\section{Introduccion}
+
+\lettrine[nindent=0em,lines=2]{L}as tecnologías de la información obligan a modificar la organización de la educación, porque crean entornos educativos que amplían considerablemente las posibilidades del sistema, no sólo de tipo
+organizativo, sino también de transmisión de conocimientos y desarrollo de destrezas, habilidades y
+actitudes. La clave está en transformar la información en conocimiento y éste, en educación y aprendizaje
+significativo
+
+%------------------------------------------------
+\section{Objetivos}
+
+\begin{itemize}
+\item Entender qué son las Estructura de Datos.
+\item Entender que son las Base de Datos Relacionales.
+\item Entender las Ventajas y Desventajas de las Estructura de Datos.
+\item Entender las Ventajas y Desventajas de los Datos Relacionales.
+\item Dar ejemplos entendibles de Estructuras de Datos.
+
+\end{itemize}
+%------------------------------------------------
+
+\section{Desarrollo}
+
+\subsection{¿Qué son las Estructura de Datos?}
+Las estructuras de datos son una forma de organizar los datos en la computadora, de tal manera que nos permita realizar operaciones de forma mas eficiente.Depende que algoritmo queramos ejecutar, habrá veces que sea mejor utilizar una estructura de datos u otra estructura que nos permita más velocidad.
+\newline
+
+\begin{itemize}
+	\item Array: Constan de un índice para acceder a una posición concreta y del valor que el mismo almacena.
+	\newline
+	\newline
+	\includegraphics[width=6.5cm, height=2cm]{imagenes/Estructura de datos/array}
+	\newline
+	\item Montículos binarios: Es una forma de guardar los datos de tal manera que aunque no estén ordenados, se pueda retirar de ese conjunto, datos de forma ordenada.
+	\newline
+	\newline
+	\includegraphics[width=6.5cm, height=3cm]{imagenes/Estructura de datos/monticulo binario}
+	\newline
+	\item Pilas: Es una forma de guardar los datos de tal manera que aunque no estén ordenados, se pueda retirar de ese conjunto, datos de forma ordenada. 
+	\newline
+	\newline
+	Para el manejo de los datos se cuenta con dos operaciones básicas: 
+	\newline
+	\item Apilar (push), que coloca un objeto en la pila. 
+	\item Retirar (o desapilar, pop), que retira el último elemento apilado.
+	\newline
+	\newline 
+	En cada momento sólo se tiene acceso a la parte superior de la pila, es decir, al último objeto apilado. La operación retirar permite la obtención de este elemento, que es retirado de la pila permitiendo el acceso al siguiente.
+	\newline
+	\newline
+	\includegraphics[width=6.5cm, height=3cm]{imagenes/Estructura de datos/pila}
+	\newline
+	\newline
+	Las pilas suelen emplearse en los siguientes contextos:
+	\newline
+	\begin{itemize}
+		\item Evaluación de expresiones en notación postfija (notación polaca inversa).
+		\item Reconocedores sintácticos de lenguajes independientes del contexto.
+		\item Implementación de recursividad.
+		\newline
+		\newline
+	\end{itemize}
+
+	\item Colas: Es una estructura de datos, caracterizada por ser una secuencia de elementos en la que la operación de inserción push se realiza por un extremo y la operación de extracción pop por el otro. También se le llama estructura FIFO (del inglés First In First Out), debido a que el primer elemento en entrar será también el primero en salir.
+	\newline
+	\newline
+	\includegraphics[width=6.5cm, height=3.5cm]{imagenes/Estructura de datos/cola}
+	\newline
+	\newline
+	
+	
+	
+	\subsection{¿Que son las Base de Datos Relacionales?}
+	Es una relación que representa un conjunto de entidades con las mismas propiedades. Cada relación se compone de una serie de filas o registros (las llamadas tuplas), cuyos valores dependen de ciertos atributos (columnas).
+	\newline
+	La tabla es el formato que utiliza el modelo relacional para explicar de un modo visual la ordenación de los valores de una tupla en función de los atributos definidos en la relación. Una base de datos relacional no es otra cosa, entonces, que un conjunto de tablas interrelacionadas.
+	\newline
+	\newline
+	\includegraphics[width=6.5cm, height=3.5cm]{imagenes/Base de datos Relacional/bd relacional}
+	\newline
+	\newline
+	Todo gestor de bases de datos relacionales soporta al menos un lenguaje formal que permite ejecutar las siguientes operaciones:
+	\begin{itemize}
+	\item Definir la estructura de datos: en la definición de los datos se guarda una descripción con metadatos de la estructura de datos en el diccionario del sistema. Cuando un usuario crea una tabla nueva, en el diccionario de datos se almacena su correspondiente esquema. El vocabulario de un lenguaje de bases de datos que se utiliza para definir los datos se denomina Data Definition Language (DDL), lenguaje de definición de datos.
+	\newline
+	\item Definir derechos: todos los lenguajes de bases de datos proporcionan una sintaxis que permite otorgar o retirar permisos. En este contexto se habla de Data Control Language (DCL) o lenguaje de control de datos, un vocabulario integrado en el lenguaje de bases de datos.
+	\newline
+	\item Definir condiciones de integridad: por condiciones de integridad se entienden los requisitos de estado que se exigen a un banco de datos. Si se definen condiciones para su integridad, la BD garantiza que se cumplan en todo momento. Se habla entonces de un estado consistente. Una condición básica de integridad en una base de datos relacional es, por ejemplo, que cada registro (tupla) pueda identificarse de forma inequívoca.
+	\newline
+	\item Definir transacciones: Es cuando se lleva a una BD de un estado consistente a otro diferente. Estas transacciones contienen una serie de instrucciones que deben ejecutarse siempre de forma íntegra. Si una se interrumpe, la BD vuelve a su estado original (Rollback). Cada transacción comienza con una orden para crear una conexión con la BD a la que siguen otras que inician las operaciones de datos en sí, así como un paso de comprobación (Commit) que asegura la integridad de la BD. Las operaciones que pongan en peligro la integridad de la tabla no se consignan (committed), es decir, no se escriben en la base de datos de forma permanente. Por último, se cierra la conexión con la BD. Al vocabulario del lenguaje de bases de datos con el que se manipulan los datos se le conoce como Data Manipulation Language (DML).
+	\newline
+	\item Definir vistas: las llamadas views son vistas virtuales de un subconjunto de los datos de una tabla. Para crear una vista, el SGBD genera una tabla virtual (relación lógica) sobre la base de las tablas físicas. En estas vistas pueden emplearse las mismas operaciones que se utilizarían en tablas físicas. Según la función de la vista de datos pueden distinguirse distintos tipos de vista. Las más habituales son aquellas que filtran determinadas filas (consulta de selección) o columnas (vista de columnas) de una tabla, así como las que conectan diversas tablas entre sí (vista de conjunto).
+	\newline
+\end{itemize}
+
+\subsection{Entender las Ventajas y Desventajas de las Estructura de Datos}
+Ventajas
+\begin{itemize}
+\item Permite modificar globalmente las variables sin tener que recorrer el código buscando cada aparición.
+\item Define variables y evita que cambien entre rutinas.
+\item Separa desde el inicio del programa el espacio en memoria.
+\end{itemize}
+\subsection{Entender las Ventajas y Desventajas de los Datos Relacionales}
+Ventajas
+	\begin{itemize}
+		\item No se tiene la necesidad de utilizar el papel como fuente de almacenamiento primario. 
+		\item La actualización de la información en una base de datos es mucha más rápida.
+		\item Disposición de información precisa y actualizada en momentos justos.
+		\item Reducción de información repetida durante el ingreso de datos.
+		\item Esta arquitectura lleva más de 50 años en el mercado, por lo que, hoy en día, existen gran cantidad de productos diseñados específicamente para gestionarla.
+		\item Permite tener la información muy bien organizada y estructurada.
+		\item La atomicidad es una de sus principales propiedades. Esta se refiere a la condición de que cada operación se realiza en su totalidad o se revierte, lo cual evita que las operaciones queden a medias.
+		\newline
+	\end{itemize}
+	
+Desventajas
+	\begin{itemize}
+		\item La manera de cómo se relacionan las diferentes entidades de la base de datos es más compleja de entender.
+		\item Los datos abstractos o no estructurados como los del big data no son admitidos.
+		\item El mantenimiento es muy costoso y complicado cuando la base de datos crece a un gran tamaño.
+		\item Los tiempos de respuesta suelen ralentizarse a medida que la base de datos crece.
+		\newline
+		\item La manera de cómo se relacionan las diferentes entidades de la base de datos es más compleja de entender.
+		\item Los datos abstractos o no estructurados como los del big data no son admitidos.
+		\item El mantenimiento es muy costoso y complicado cuando la base de datos crece a un gran tamaño.
+		\item Los tiempos de respuesta suelen ralentizarse a medida que la base de datos crece.
+		\item El inconveniente de esta implementación es que es necesario fijar de ante mano el número máximo de elementos que se puede contener la pila,y por lo tanto al apilar un elemento es necesario controlar que no se inserte un elemento si la pila está llena.
+		\newline
+	\end{itemize}
+\end{itemize}
+
+
+	
+
+
+\subsection{Ejemplos entendibles de Estructura de Datos}
+
+Estructura de Datos Pila
+\newline
+\newline
+\includegraphics[width=9cm, height=12cm]{imagenes/pila/1}
+\newline
+\includegraphics[width=6.5cm, height=7cm]{imagenes/pila/2}
+\newline
+\newline
+Estructura de Datos Lista
+\newline
+\newline
+\includegraphics[width=6.5cm, height=12cm]{imagenes/lista/1}
+\newline
+\includegraphics[width=6.5cm, height=7cm]{imagenes/lista/2}
+\newline
+\includegraphics[width=6.5cm, height=12cm]{imagenes/lista/3}
+\newline
+\includegraphics[width=6.5cm, height=7cm]{imagenes/lista/4}
+\newline
+\includegraphics[width=6.5cm, height=7cm]{imagenes/lista/5}
+\newline
+\newline
+Estructura de Datos Colas
+\newline
+\newline
+\includegraphics[width=6.5cm, height=12cm]{imagenes/colas/1}
+\newline
+\includegraphics[width=6.5cm, height=7cm]{imagenes/colas/2}
+\newline
+\includegraphics[width=6.5cm, height=2cm]{imagenes/colas/3}
+\newline
+\newline
+Estructura de Datos Arbol
+\newline
+\newline
+\includegraphics[width=5cm, height=2cm]{imagenes/arbol/1}
+\newline
+\newline
+\includegraphics[width=7cm, height=10cm]{imagenes/arbol/2}
+\newline
+\newline
+\includegraphics[width=7cm, height=10cm]{imagenes/arbol/3}
+\newline
+\newline
+\includegraphics[width=7cm, height=2cm]{imagenes/arbol/4}
+\newline
+\newline
+
+
+
+\section{Recomendaciones}
+Se recomienda aprender practicando ya que la experiencia es la única forma hábil de detectar donde te pueden ayudar las Estructura de Datos y en Bases De Datos Relacionales
+\section{Bibliográfia}
+\begin{itemize}
+
+\item Telles Brunelli Lazzarin, Ivo Barbi (2012, 19 agosto).Analisis de Bases De Datos Relacionales.
+\newline
+\newline
+Recuperado: https://dspace.ups.edu.ec/bitstream/123456789/6977/1/UPS-CT003639.pdf
+\newline
+
+\item Fernando Quevedo (2011).Construcción de una base de datos.
+\newline
+\newline
+Recuperado: https://blog.enzymeadvisinggroup.com/ejemplos-de-base-de-datos
+\newline
+
+\item Guglielmo Trentin (1992).Estructura y organización de una base de datos
+\newline
+\newline
+Recuperado: https://prezi.com/4vycdtsiigbo/estructura-de-datos/
+\newline
+
+\item Vera Koester (2015).Estructura de datos
+\newline
+\newline
+Recuperado: http://www.calcifer.org/documentos/librognome/glib-lists-queues.html
+\newline
+
+\item Vera Koester (2019).Técnica de extracción de información de bases de datos
+\newline
+\newline
+Recuperado: https://www.upo.es/revistas/index.php/RevMetCuant/article/view/2057
+\newline
+
+\item Juan Esteban Díaz Montejo (2015).Técnica de extracción de información de bases de datos
+\newline
+\newline
+Recuperado: https://www.ionos.es/digitalguide/hosting/cuestiones-tecnicas/bases-de-datos-relacionales/
+\newline
+
+\item Mervat Chouman (2013).Tecnicas de Monticulos
+\newline
+\newline
+Recuperado: https://www.infor.uva.es/~cvaca/asigs/monticulos.pdf
+\newline
+
+\item Susan Goldman (2007).Importancia de las Estructuras de Datos
+\newline
+\newline
+Recuperado: https://openwebinars.net/blog/que-son-las-estructuras-de-datos-y-por-que-son-tan-utiles/
+\newline
+
+
+\end{itemize}
+\end{document}
